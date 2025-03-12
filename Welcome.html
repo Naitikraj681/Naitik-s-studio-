@@ -1,0 +1,28 @@
+<!<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2 id="welcomeMessage"></h2>
+    <ul>
+        <li><a href="music.html">Naitik's Music</a></li>
+        <li><a href="videos.html">Naitik's Videos</a></li>
+        <li><a href="shorts.html">Naitik's Shorts</a></li>
+        <li><a href="kiwi.html">Only for Kiwi</a></li>
+    </ul>
+
+    <script>
+        let userData = JSON.parse(localStorage.getItem("userDetails"));
+        if (userData) {
+            document.getElementById("welcomeMessage").innerText = 
+                userData.gender === "male" 
+                ? `Welcome Mr. ${userData.name} in Naitik's Studio` 
+                : `Welcome Miss. ${userData.name} in Naitik's Studio`;
+        }
+    </script>
+</body>
+</html>￼Enter
