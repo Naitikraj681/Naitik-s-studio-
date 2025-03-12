@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database (Admin Only)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Enter Admin Password</h2>
+    <input type="text" id="adminPass" value="Heartbroken of naitik" readonly><br>
+    <button onclick="checkPassword()">Enter</button>
+    <div id="userData" style="display:none;">
+        <h3>Stored User Data</h3>
+        <pre id="dataOutput"></pre>
+    </div>
+
+    <script>
+        function checkPassword() {
+            let enteredPassword = document.getElementById("adminPass").value;
+            if (enteredPassword === "Heartbroken of naitik") {
+                document.getElementById("userData").style.display = "block";
+                let userData = localStorage.getItem("userDetails");
+                document.getElementById("dataOutput").textContent = userData ? userData : "No data found!";
+            } else {
+                alert("Incorrect Password!");
+            }
+        }
+    </script>
+</body>
+</html>
